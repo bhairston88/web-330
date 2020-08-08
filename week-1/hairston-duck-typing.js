@@ -1,10 +1,10 @@
 /*
 ============================================
-; Title: hairston-class-refresher.js
+; Title: hairston-duck-typing.js
 ; Author: Professor Krasso
 ; Date:   8 August 2020
 ; Modified By: Brooklyn Hairston
-; Description: 
+; Description: Demonstrates how to create and use interfaces
 ;===========================================
 */
 
