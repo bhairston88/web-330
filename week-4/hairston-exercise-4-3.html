@@ -1,0 +1,58 @@
+<!--
+/*
+============================================
+; Title: hairston-exercise-4-3.html
+; Author: Professor Krasso
+; Date: 30 August 2020
+; Modified By: Brooklyn Hairston
+; Description: Demonstrates HTTP PUT and DELETE Operations
+;===========================================
+*/
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>HTTP PUT and DELETE Operations</title>
+
+        <script type ="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/5DACB2B0-5003-6543-8B39-D8EE6E4FC44C/main.js" charset="UTP-8">
+        </script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  
+    </head>
+
+    <body>
+
+        <h4>HTTP PUT and DELETE Operations</h4>
+
+        <button id="ID1">Delete Button</button>
+        <script>
+
+//header
+const header = require('../hairston-header.js')
+
+console.log(header.display('Brooklyn','Hairston','HTTP PUT and DELETE Operations'))
+
+/**
+ * onclick event and DELETE request
+**/
+            $(function() {
+                $('#ID1').click(function() {
+                    $.ajax({
+                        url: 'http://httpbin.org/delete',
+                        dataType: 'json',
+                        type: 'DELETE',
+                        data: {name: 'Brooklyn Hairston', age: '33', jobTitle: 'Stock Supervisor'},
+                        success: function(data, status) {
+                            console.log("Name:" + data.form.name + "\nAge:" + data.form.age + "\nJob Title:" + data.form.jobTitle + "\nStatus:" + status);
+                        }
+                    })
+                });
+            });
+        </script>
+    </body>
+    
+
+</html>
+
