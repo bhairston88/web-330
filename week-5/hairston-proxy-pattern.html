@@ -1,0 +1,73 @@
+<!--
+/*
+============================================
+; Title: hairston-exercise-5-2.html
+; Author: Professor Krasso
+; Date: 7 September 2020
+; Modified By: Brooklyn Hairston
+; Description: Demonstrates how to create and use the Proxy Pattern
+;===========================================
+*/
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>The Proxy Pattern</title>
+
+        <!-- Stylesheet - Bootstrap -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" 
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" 
+        crossorigin="anonymous">
+
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <script>
+
+            //header
+            const header = require('../hairston-header.js')
+            
+            console.log(header.display('Brooklyn','Hairston','The Proxy Pattern'))
+        </script>
+
+    </head>
+    <body>
+        <nav class="navbar navbar-dark bg-dark">
+            <a href="#" class="navbar-brand">Home</a>
+        </nav>
+
+        <br /><br />
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>The Proxy Pattern</h2>
+                    <button class="btn btn-primary" id="btnExample">Proxy Example</button>
+                    <br />
+                    <span id="proxyExample"></span>
+                </div>
+            </div>
+        </div>
+        
+
+        <script>
+            $(function() {
+                var book = {
+                    title: "Good Omens",
+                    author: "Neil Gaiman",
+                    display: function() {
+                        $("#proxyExample").html("");
+
+                        $("#proxyExample").append("<br />Title: " + this.title + "<br />" + "Author: " + this.author);
+                    }
+                };
+                
+                $("#btnExample").click($.proxy(book, "display"));
+
+             });
+        
+
+        
+        </script>
+        
+    </body>
+</html>
