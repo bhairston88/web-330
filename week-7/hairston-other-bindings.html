@@ -5,7 +5,7 @@
 ; Author: Professor Krasso
 ; Date: 19 September 2020
 ; Modified By: Brooklyn Hairston
-; Description: Demonstrates Knockout 
+; Description: Demonstrates how to use Knockout bindings
 ;===========================================
 */
 -->
@@ -87,6 +87,12 @@
 
 
     <script>
+
+        /**
+         * Params: n/a
+         * Response: the url, title and description values
+         * Description: creates a Tutorial View Model which iterates over and outputs the values of the tutorial array
+        **/
 
         function TutorialViewModel() {
             this.tutorial = ko.observableArray([
